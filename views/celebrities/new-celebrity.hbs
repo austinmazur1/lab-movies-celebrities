@@ -1,0 +1,16 @@
+{{!-- remember name attribute must be same as in the route handler --}}
+{{!-- also the action must match the route handler --}}
+<h2>New Celebrity</h2>
+
+<form action="/celebrities/create" method="post">
+    <label>Name
+    <input type="text" name="name"/><br>
+    </label><br>
+    <label>Occupation
+    <input type="text" name="occupation"/>
+    </label><br>
+    <label>Catch Phrase
+        <input type="text" name="catchPhrase"/>
+    </label><br>
+<button type="submit">Submit</button>
+</form>
