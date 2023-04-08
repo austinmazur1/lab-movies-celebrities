@@ -1,0 +1,12 @@
+{{!-- TODO display the casts info use a each loop to display name ocupation and catch phrase --}}
+
+<h2>Movies!</h2>
+
+<ul>
+  {{#each movies}}
+
+    <li>{{title}}<a href="/movies/{{_id}}">details</a></li>
+    <li>{{cast.length}}</li>
+  {{/each}}
+</ul>
+<a href="/">Homepage</a>
