@@ -20,11 +20,12 @@ router.get("/movies/create", (req, res, next) => {
 //post request for the movie entered in the form
 router.post("/movies/create", (req, res, next) => {
   const { title, genre, plot, cast } = req.body;
+
   const newMovie = {
     title: title,
     genre: genre,
     plot: plot,
-    cast: [cast],
+    cast: Array.isArray(cast) ? cast : [cast],
   };
 
   //Creates the movie

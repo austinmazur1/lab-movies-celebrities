@@ -4,8 +4,16 @@
 <p>Title: {{movie.title}}</p>
 <p>Plot: {{movie.plot}}</p>
 <p>Genre: {{movie.genre}}</p>
-<p>Cast: {{movie.cast}}</p>
+{{!-- <p>Cast: {{movie.cast}}</p> --}}
 
+<p>Cast:</p>
+<ul>
+{{#each movie.cast}}
+<li>Name: {{this.name}}</li>
+<li>Occupation: {{this.occupation}}</li>
+<li>Catch phrase: {{this.catchPhrase}}</li>
+{{/each}}
+</ul>
 <a href="/movies">Movies</a>
 
 <form action="/movies/{{movie.id}}/delete" method="post">

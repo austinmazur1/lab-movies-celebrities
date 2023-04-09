@@ -12,7 +12,7 @@
     </label><br>
 
 <label for="cast">Cast:</label>
-    <select name="cast" id="cast">
+    <select name="cast" id="cast" multiple>
         {{#each celebs}}
         <option value="{{this._id}}">{{this.name}}</option>
         {{/each}}
