@@ -1,12 +1,42 @@
-{{!-- TODO display the casts info use a each loop to display name ocupation and catch phrase --}}
+{{! TODO display the casts info use a each loop to display name ocupation and catch phrase }}
 
-<h2>Movies!</h2>
+<h2 class="text-6xl text-stone-100 mt-4 mx-auto text-center">Movies!</h2>
 
-<ul>
+<div class="grid grid-cols-3 justify-normal gap-6">
   {{#each movies}}
-
-    <li>{{title}}<a href="/movies/{{_id}}">details</a></li>
-    <li>{{cast.length}}</li>
+    <div class="flex flex-col items-center p-4 bg-stone-200 shadow-md rounded">
+      <p class="text-2xl">{{title}}</p>
+      <a class="text-xs"href="/movies/{{_id}}">details</a>
+      {{!-- <p>{{cast.length}}</p> --}}
+    </div>
   {{/each}}
-</ul>
+</div>
 <a href="/">Homepage</a>
+
+{{!-- <div class="p-12">
+  <h2 class="font-bold text-3xl pb-2">Ironhack Cinema</h2>
+  <p class="text-xl pb-9">Click on the movie to check the showtimes!</p>
+  <div class="grid grid-cols-3 justify-normal gap-6">
+    {{#each movies}}
+      <div class="flex flex-col items-center p-4">
+
+        <img
+          class="object-scale-down w-auto h-auto m-auto shadow-xl"
+          src="{{image}}"
+          alt="{{title}} image"
+        />
+        <h3 class="p-2 font-bold">{{title}}</h3>
+        <a class="underline text-blue-400" href="/movie/{{id}}">See more</a>
+
+        <a
+          class="underline text-blue-400 pb-2"
+          href="/movie/{{id}}/edit"
+        >Edit</a>
+
+        <form action="/movies/{{id}}/delete" method="post">
+          <button>Delete</button>
+        </form>
+      </div>
+    {{/each}}
+  </div>
+</div> --}}

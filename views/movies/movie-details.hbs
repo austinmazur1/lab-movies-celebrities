@@ -1,24 +1,31 @@
-<h2>Movie Info</h2>
+<h2 class="text-6xl text-stone-100 mt-4 mx-auto text-center">Movie Info</h2>
 
+<div class="flex justify-center items-center mt-36 leading-loose">
+  <div class="flex flex-col bg-blue-200 rounded p-6 leading-loose tracking-wide">
+    <p class="text-xl">Title: {{movie.title}}</p>
+    <p class="text-xl">Plot: {{movie.plot}}</p>
+    <p class="text-xl">Genre: {{movie.genre}}</p>
+    {{!-- <p>Cast: {{movie.cast}}</p> --}}
 
-<p>Title: {{movie.title}}</p>
-<p>Plot: {{movie.plot}}</p>
-<p>Genre: {{movie.genre}}</p>
-{{!-- <p>Cast: {{movie.cast}}</p> --}}
+    <p class="text-xl">Cast:</p>
+    <ul>
+      {{#each movie.cast}}
+        <div class="">
+        <li>Name: {{this.name}}</li>
+        <li>Occupation: {{this.occupation}}</li>
+        <li>Catch phrase: {{this.catchPhrase}}</li>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
 
-<p>Cast:</p>
-<ul>
-{{#each movie.cast}}
-<li>Name: {{this.name}}</li>
-<li>Occupation: {{this.occupation}}</li>
-<li>Catch phrase: {{this.catchPhrase}}</li>
-{{/each}}
-</ul>
-<a href="/movies">Movies</a>
-
-<form action="/movies/{{movie.id}}/delete" method="post">
-<button>Delete</button>
-</form>
-<form action="/movies/{{movie.id}}/edit" method="get">
-<button>Edit</button>
-</form>
+  <div class="flex flex-col bg-blue-300">
+    <a href="/movies">Movies</a>
+    <form action="/movies/{{movie.id}}/delete" method="post">
+      <button>Delete</button>
+    </form>
+    <form action="/movies/{{movie.id}}/edit" method="get">
+      <button>Edit</button>
+    </form>
+  </div>
+</div>
